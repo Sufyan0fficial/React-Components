@@ -45,7 +45,7 @@ function HeaderComponent() {
               Company
             </Link>
           </div>
-          <Link href="/" className="hidden">
+          <Link href="/" className="hidden lg:block">
             <Image
               src="/xevenhealthpage/serachicon.png"
               alt="search icon"
@@ -55,7 +55,7 @@ function HeaderComponent() {
           </Link>
           <Link
             href="/"
-            className="lg:flex gap-2 items-center hover:text-[] transition-colors duration-300 hidden"
+            className="lg:flex gap-2 items-center hover:text-[#FF87FA] transition-colors duration-300 hidden"
           >
             <Image
               src="/xevenhealthpage/phoneicon.png"

@@ -32,7 +32,7 @@ function MainSection() {
             data.
           </p>
           <Link href="/" className="mt-16">
-            <button className="bg-gradient-to-tr from-pink2 to-pink1 font-titillium rounded-md px-6 py-2 ">
+            <button className="bg-gradient-to-tr from-pink2 to-pink1 font-titillium rounded-md px-6 py-2 hover:from-white hover:to-white hover:border hover:border-pink1 hover:text-pink1">
               Let's Connect
             </button>
           </Link>
@@ -71,7 +71,7 @@ function MainSection() {
                   outcomes.
                 </p>
                 <Link href="/" className="font-titillium text-base">
-                  <button className="bg-gradient-to-tr from-pink2 to-pink1 font-titillium rounded-md px-6 py-2 text-white">
+                  <button className="bg-gradient-to-tr from-pink2 to-pink1 font-titillium rounded-md px-6 py-2 text-white hover:border hover:border-pink1 hover:text-pink1 hover:from-white hover:to-white">
                     Schedule a Demo
                   </button>
                 </Link>
