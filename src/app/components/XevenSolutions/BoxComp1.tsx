@@ -1,9 +1,15 @@
 import Image from "next/image";
 import React from "react";
-
-function BoxComp1({ img, h3, p }: any) {
+interface Type1 {
+  img: any;
+  h3: string;
+  p: string;
+}
+function BoxComp1({ img, h3, p }: Type1) {
   return (
-    <div className="w-full lg:w-[30%] md:w-[48%] px-6 py-6 border rounded-lg shadow-md hover:border-2 hover:border-pink2 ">
+    <div
+      className={`w-full lg:w-[32%] md:w-[48%] px-6 py-6 border rounded-lg shadow-md hover:border-2 hover:border-pink2 `}
+    >
       <Image
         src={img}
         alt=""

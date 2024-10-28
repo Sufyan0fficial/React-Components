@@ -6,23 +6,23 @@ import React, { useState } from "react";
 
 function ComplexComp() {
   const [activeContent, setactiveContent] = useState({});
-  const Content = [
-    {
-      heading1: "UI/UX",
-      desc: "The importance of a first impression cannot be overstated. Whether its your website or mobile app, the initial interaction with users sets the tone for their entire experience. Building a strong digital presence is imperative in todays competitive landscape.",
-      heading2: "Business Benefits of Choosing Us",
-      listData: {
-        "Better User Engagement":
-          "Our UI/UX Design Services focus on intuitive designs and seamless user experiences to boost user engagement.",
-        "UI/UX Expertise:":
-          "Our team specializes in crafting user interfaces that help you stand out from the competition and leave a lasting impression on users.",
-        "Fusion of Creativity and Functionality:":
-          " We blend creativity and functionality to create stunning interfaces and deliver a user experience that keeps users returning for more.",
-        "Stunning Interfaces: ":
-          " For businesses like yours, we craft stunning designs that are visually appealing, easy to navigate, and highly engaging.",
-      },
-    },
-  ];
+  // const Content = [
+  //   {
+  //     heading1: "UI/UX",
+  //     desc: "The importance of a first impression cannot be overstated. Whether its your website or mobile app, the initial interaction with users sets the tone for their entire experience. Building a strong digital presence is imperative in todays competitive landscape.",
+  //     heading2: "Business Benefits of Choosing Us",
+  //     listData: {
+  //       "Better User Engagement":
+  //         "Our UI/UX Design Services focus on intuitive designs and seamless user experiences to boost user engagement.",
+  //       "UI/UX Expertise:":
+  //         "Our team specializes in crafting user interfaces that help you stand out from the competition and leave a lasting impression on users.",
+  //       "Fusion of Creativity and Functionality:":
+  //         " We blend creativity and functionality to create stunning interfaces and deliver a user experience that keeps users returning for more.",
+  //       "Stunning Interfaces: ":
+  //         " For businesses like yours, we craft stunning designs that are visually appealing, easy to navigate, and highly engaging.",
+  //     },
+  //   },
+  // ];
   return (
     <div>
       <Container maxWidth="lg" className="mt-20 ">

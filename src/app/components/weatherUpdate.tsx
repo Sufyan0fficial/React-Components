@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import Image from "next/image";
+
 import React, { useState } from "react";
 
 export const revalidat = 10;

@@ -3,7 +3,25 @@ import React, { useState } from "react";
 function PassingDatatoApi() {
   const [Data, setData] = useState({});
   console.log("Data is", Data);
-  const options: any = {
+  // Define the structure of the body separately
+  interface RequestBody {
+    username: string;
+    email: string;
+    password: string;
+    role: "USER" | "ADMIN"; // Assuming 'role' can be 'USER' or 'ADMIN'
+  }
+
+  // Define the main options type
+  interface OptionsType {
+    method: "POST" | "GET" | "PUT" | "DELETE"; // Restricting to common HTTP methods
+    headers: {
+      "Content-Type": string;
+    };
+    body: string; // JSON.stringify will produce a string
+  }
+
+  // Define the options object using the interfaces
+  const options: OptionsType = {
     method: "POST",
     headers: {
       "Content-Type": "Application/json",
@@ -13,7 +31,7 @@ function PassingDatatoApi() {
       email: "sufyan388official@gmail.com",
       password: "1234",
       role: "USER",
-    }),
+    } as RequestBody),
   };
 
   async function handleClick() {

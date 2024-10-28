@@ -1,7 +1,11 @@
 import Image from "next/image";
 import React from "react";
-
-function BoxComp2({ img, h3, p }: any) {
+export interface Type2 {
+  img: any;
+  h3: string;
+  p: string;
+}
+function BoxComp2({ img, h3, p }: Type2) {
   return (
     <div className="w-[45%] lg:w-[30%] flex-shrink-0 ">
       <div className="w-full h-72 relative flex-shrink-0">

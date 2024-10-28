@@ -1,12 +1,21 @@
 "use client";
 
-import { Container, dividerClasses } from "@mui/material";
+import { Container } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 
+interface ContentType {
+  id: number;
+  title: string;
+  desc: string;
+  heading2: string;
+  listData: {
+    [key: string]: string;
+  };
+}
 function ComplexComp2() {
   const [activeContent, setactiveContent] = useState(1);
-  const Content: any = [
+  const Content: ContentType[] = [
     {
       id: 1,
       title: "UI/UX",
@@ -72,9 +81,10 @@ function ComplexComp2() {
       },
     },
     {
-      id: 5,
+      id: 4,
       title: "Machine & Deep Learning",
-      desc: "Machine Learning (ML) has transformed numerous industries, with the ML market forecasted to soar to $204.30 billion by 2024. Leveraging our proficiency in AI development solutions, we harness the power of machine and deep learning to create innovative systems.",
+      desc: "Elevate user experiences by leveraging our ChatGPT Integration Services into your business processes. It enables you to leverage the advanced capabilities of NLP and ML to provide more intuitive and personalized interactions for your customers.",
+      heading2: "Business Benefits of Choosing Us",
       listData: {
         "Cutting-Edge Expertise":
           "Our team of experts is proficient in utilizing the latest technologies to develop custom AI solutions tailored to your needs.",
@@ -86,6 +96,7 @@ function ComplexComp2() {
           " For businesses like yours, we craft stunning designs that are visually appealing, easy to navigate, and highly engaging.",
       },
     },
+
     {
       id: 6,
       title: "Computer Vision",
@@ -225,7 +236,7 @@ function ComplexComp2() {
             <div className="flex flex-col lg:flex-row mb-10 lg:mt-20 mt-10 lg:items-stretch relative  accordianShadow">
               {/* 1st Part */}
               <div className="lg:w-1/3 w-full  bg-[#000037] text-white font-titillium font-semibold text-lg pt-[45px] pl-[30px] pb-[35px] gap-6 flex flex-col lg:-mt-12  mb-8 2xl:mb-12 lg:-ml-8 accordianShadow ">
-                {Content.map((data: any) => {
+                {Content.map((data: ContentType) => {
                   return (
                     <div
                       key={data.id}
@@ -258,8 +269,11 @@ function ComplexComp2() {
                 </h4>
                 <ul className="list-none">
                   {Object.keys(Content[activeContent - 1].listData).map(
-                    (key) => (
-                      <li className="relative pl-8 before:absolute before:left-0 before:top-4 before:-translate-y-1/2 before:w-[10px] before:h-2 before:bg-black mb-4">
+                    (key, index) => (
+                      <li
+                        className="relative pl-8 before:absolute before:left-0 before:top-4 before:-translate-y-1/2 before:w-[10px] before:h-2 before:bg-black mb-4"
+                        key={index}
+                      >
                         {" "}
                         <span className="font-titillium  text-[#72749f] font-semibold text-lg ">
                           {key}{" "}
