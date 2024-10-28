@@ -12,6 +12,10 @@ function page() {
   return (
     <div>
       <HeaderComponent />
+      <HealthTech />
+      <ComplexComp2 />
+      <ComplexImgComp />
+      <SwiperCarousel />
       <AboutUS />
     </div>
   );

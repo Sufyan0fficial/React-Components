@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 export interface Type2 {
-  img: any;
+  img: string;
   h3: string;
   p: string;
 }
