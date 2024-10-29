@@ -3,7 +3,7 @@
 import { Container } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { DummyData2 } from "@/app/components/XevenSolutions/Data";
 
 function ComplexImgComp() {
