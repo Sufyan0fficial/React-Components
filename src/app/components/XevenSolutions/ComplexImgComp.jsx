@@ -3,14 +3,18 @@
 import { Container } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DummyData2 } from "@/app/components/XevenSolutions/Data";
 
 function ComplexImgComp() {
   const [activeBox, setActiveBox] = useState(0);
-  const DummyData = [1, 2, 3, 4, 5, 6, 7, 8];
-  const AvailableData = DummyData2;
 
+  const AvailableData = DummyData2;
+  useEffect(() => {
+    AvailableData.forEach((box) => {
+      new Image().src = `/xevenhealthpage/${box.img}.jpg`;
+    });
+  }, []);
   return (
     <div>
       <Container maxWidth="lg" className="my-20">
@@ -35,46 +39,46 @@ function ComplexImgComp() {
       </Container>
       {/* Main Image Component Starts here */}
       <div className="flex flex-col md:flex-row justify-center items-center flex-wrap  border-2 border-red-500 relative w-full h-full group">
-        {DummyData.map((box, index) => (
+        {AvailableData.map((box, index) => (
           <div
             key={index}
             className={`lg:w-1/4 w-full md:w-1/2 md:h-80 h-60 border border-white relative transition-all duration-300 
               ${
                 activeBox === index
                   ? "bg-gradient-to-b from-pink1 to-pink2 hover:from-pink1"
-                  : "bg-transparent"
+                  : ""
               }`}
             onMouseEnter={() => setActiveBox(index)}
           >
             {/* Content Starts here */}
             <div className="flex items-center justify-center h-full text-center">
               {activeBox === index ? (
-                <div className="flex flex-col gap-4 text-white px-10 py-20 w-full h-full">
+                <div className="flex flex-col gap-4 text-white px-10 py-20 w-full h-full mb-8">
                   <h3 className="font-poppins text-2xl font-medium">
-                    {AvailableData[index].title}
+                    {box.title}
                   </h3>
-                  <p className="font-titillium text-sm">
-                    {AvailableData[index].desc}
-                  </p>
+                  <p className="font-titillium text-sm">{box.desc}</p>
                   <Link href="/" className="text-base">
                     Read More →
                   </Link>
                 </div>
               ) : (
                 <div className="font-poppins text-4xl text-white">
-                  {AvailableData[index].title}
+                  {box.title}
                 </div>
               )}
             </div>
           </div>
         ))}
         {/* Background Image */}
+
         <Image
           src={`/xevenhealthpage/${AvailableData[activeBox].img}.jpg`}
           alt="background image"
           fill
           sizes="100%"
           className="object-cover object-center -z-10 group-hover:transition group-hover:ease-out 
+          
 "
         />
       </div>

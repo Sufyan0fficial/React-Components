@@ -81,7 +81,7 @@ function ComplexComp2() {
       },
     },
     {
-      id: 4,
+      id: 5,
       title: "Machine & Deep Learning",
       desc: "Elevate user experiences by leveraging our ChatGPT Integration Services into your business processes. It enables you to leverage the advanced capabilities of NLP and ML to provide more intuitive and personalized interactions for your customers.",
       heading2: "Business Benefits of Choosing Us",
