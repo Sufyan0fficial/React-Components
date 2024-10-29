@@ -1,9 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import { Type2 } from "./BoxComp2";
-function BoxComp3({ img, h3, p }: Type2) {
+function BoxComp3({ img, h3, p, className }: Type2) {
+  const defaultWidthClasses = "w-full md:w-[48%]"; //default width
   return (
-    <div className="flex flex-col lg:flex-row lg:items-center justify-start lg:gap-4 w-full md:w-[48%] pl-6 pr-10 py-6 border rounded-lg lg:shadow-md hover:border-2 hover:border-pink2 shadow-lg ">
+    <div
+      className={` flex flex-col lg:flex-row lg:items-center justify-start lg:gap-4  pl-6 pr-10 py-6 border rounded-lg lg:shadow-md hover:border-2 hover:border-pink2 shadow-lg ${defaultWidthClasses} ${className} `}
+    >
       <Image
         src={img}
         alt=""

@@ -4,6 +4,7 @@ export interface Type2 {
   img: string;
   h3: string;
   p: string;
+  className?: string;
 }
 function BoxComp2({ img, h3, p }: Type2) {
   return (
