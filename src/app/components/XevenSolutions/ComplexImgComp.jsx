@@ -10,11 +10,11 @@ function ComplexImgComp() {
   const [activeBox, setActiveBox] = useState(0);
 
   const AvailableData = DummyData2;
-  useEffect(() => {
-    AvailableData.forEach((box) => {
-      new Image().src = `/xevenhealthpage/${box.img}.jpg`;
-    });
-  }, []);
+  // useEffect(() => {
+  //   AvailableData.forEach((box) => {
+  //     new Image().src = `/xevenhealthpage/${box.img}.jpg`;
+  //   });
+  // }, []);
   return (
     <div>
       <Container maxWidth="lg" className="my-20">
