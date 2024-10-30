@@ -3,18 +3,14 @@
 import { Container } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { DummyData2 } from "@/app/components/XevenSolutions/Data";
 
-function ComplexImgComp() {
+export default function ComplexImgComp() {
   const [activeBox, setActiveBox] = useState(0);
 
   const AvailableData = DummyData2;
-  // useEffect(() => {
-  //   AvailableData.forEach((box) => {
-  //     new Image().src = `/xevenhealthpage/${box.img}.jpg`;
-  //   });
-  // }, []);
+
   return (
     <div>
       <Container maxWidth="lg" className="my-20">
@@ -71,19 +67,21 @@ function ComplexImgComp() {
           </div>
         ))}
         {/* Background Image */}
-
-        <Image
-          src={`/xevenhealthpage/${AvailableData[activeBox].img}.jpg`}
-          alt="background image"
-          fill
-          sizes="100%"
-          className="object-cover object-center -z-10 group-hover:transition group-hover:ease-out 
+        {useMemo(
+          () => (
+            <Image
+              src={`/xevenhealthpage/${AvailableData[activeBox].img}.jpg`}
+              alt="background image"
+              fill
+              sizes="100%"
+              className="object-cover object-center -z-10 group-hover:transition group-hover:ease-out 
           
 "
-        />
+            />
+          ),
+          [activeBox]
+        )}
       </div>
     </div>
   );
 }
-
-export default ComplexImgComp;
