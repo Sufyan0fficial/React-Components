@@ -34,15 +34,7 @@ export default function ComplexImgComp() {
         </div>
       </Container>
       {/* Main Image Component Starts here */}
-      <div
-        className="flex flex-col md:flex-row justify-center items-center flex-wrap  border-2 border-red-500 relative w-full h-full group"
-        style={{
-          backgroundImage: `url('/xevenhealthpage/${AvailableData[activeBox].img}.jpg')`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundColor: "#AF3CFF",
-        }}
-      >
+      <div className="flex flex-col md:flex-row justify-center items-center flex-wrap  border-2 border-red-500 relative w-full h-full group">
         {AvailableData.map((box, index) => (
           <div
             key={index}
@@ -74,6 +66,17 @@ export default function ComplexImgComp() {
             </div>
           </div>
         ))}
+        {/* Background Image */}
+
+        <Image
+          src={`/xevenhealthpage/${AvailableData[activeBox].img}.jpg`}
+          alt="background image"
+          fill
+          sizes="100%"
+          className="object-cover object-center -z-10 group-hover:transition group-hover:ease-out 
+          
+"
+        />
       </div>
     </div>
   );
